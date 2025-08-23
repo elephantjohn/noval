@@ -1,4 +1,5 @@
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Any
+from .templates_base import style_rules_common_user, style_rules_common_system
 
 
 PLATFORM_VALUES = (
@@ -30,24 +31,52 @@ def build_chapter_messages(
     chapter_index: int,
     summary_lines: List[str],
     character_notes: Optional[Dict[str, str]] = None,
+    story_context: Optional[Dict[str, Any]] = None,
 ) -> List[Dict[str, str]]:
     """
     Build messages for a given chapter.
     - chapter_index starts from 1
     - summary_lines are 8-12 concise bullets from previous chapter(s)
     - character_notes may include delta updates for main characters
+    - story_context includes characters, plot threads, world details from StoryManager
     """
     summary_block = _join_summary_lines(summary_lines)
 
-    character_delta = ""
-    if character_notes:
+    # 构建人物档案块
+    character_block = ""
+    if story_context and "characters" in story_context:
+        char_lines = list(story_context["characters"].values())
+        if char_lines:
+            character_block = "\n【人物档案】\n" + "\n".join(char_lines)
+    elif character_notes:
         lines = [f"{k}: {v}" for k, v in character_notes.items() if v]
         if lines:
-            character_delta = "\n人物小传增量:\n" + "\n".join(lines)
+            character_block = "\n人物小传增量:\n" + "\n".join(lines)
+    
+    # 构建剧情线索块
+    plot_block = ""
+    if story_context and "plot_threads" in story_context:
+        plot_lines = list(story_context["plot_threads"].values())
+        if plot_lines:
+            plot_block = "\n【剧情线索】\n" + "\n".join(plot_lines)
+    
+    # 构建世界观细节块
+    world_detail_block = ""
+    if story_context and "world_details" in story_context:
+        if story_context["world_details"]:
+            world_detail_block = "\n【世界设定补充】\n" + "\n".join(story_context["world_details"])
+    
+    # 构建历史章节概要块（改进：使用多章概要而非单章）
+    enhanced_summary_block = summary_block
+    if story_context and "recent_summaries" in story_context:
+        if story_context["recent_summaries"]:
+            recent = "\n".join(f"- {s}" for s in story_context["recent_summaries"])
+            enhanced_summary_block = f"【近期剧情脉络】\n{recent}\n\n【上章详细】\n{summary_block}"
 
     style_block = (
         "风格要求: 想象力奔涌, 心怀高远理想与不凡愿望; 语言可宏阔但不空喊口号, "
-        "以细节与行动承载理想; 不低俗, 不血腥, 不狂躁; 叙事以因果推进, 人物以选择承担代价。"
+        "以细节与行动承载理想; 不低俗, 不血腥, 不狂躁; 叙事以因果推进, 人物以选择承担代价。\n"
+        + style_rules_common_user
     )
 
     chapter_goal_map = {
@@ -68,14 +97,18 @@ def build_chapter_messages(
 
     structure_block = (
         "结构为起承转合四段, 每段约八百至九百字; 结尾留下温火而有力的悬念; "
-        "只输出正文, 不写标题与编号; 文末补一句极短的下一章写作意图, 不超过三十字, 以句号结尾。"
+        "只输出纯小说正文, 不写任何标题、编号、分隔符或元信息; "
+        "不要在文末写下一章预告或写作意图。"
     )
 
     word_count_block = "字数为三千四百至三千六百字。"
 
     user_prompt = (
         f"请写第{chapter_index}章正文。\n"
-        f"{summary_block}{character_delta}\n"
+        f"{enhanced_summary_block}"
+        f"{character_block}"
+        f"{plot_block}"
+        f"{world_detail_block}\n"
         f"世界观: {WORLD_SETTING}\n"
         f"本章目标: {chapter_goal}\n"
         f"{style_block}\n{structure_block}\n{word_count_block}"
@@ -86,7 +119,10 @@ def build_chapter_messages(
             "role": "system",
             "content": (
                 "你是一位擅长中国古代玄幻长篇创作的作家, "+
-                "将平台价值观内化为写作底线, 保证内容有思想厚度与人性温度。\n"+PLATFORM_VALUES
+                "将平台价值观内化为写作底线, 保证内容有思想厚度与人性温度。"+
+                "重要：只输出小说正文内容，不要输出任何其他信息。\n"+
+                style_rules_common_system + "\n"+
+                PLATFORM_VALUES
             ),
         },
         {"role": "user", "content": user_prompt},

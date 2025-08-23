@@ -1,0 +1,100 @@
+{
+  "chapter": 2,
+  "compliant": false,
+  "details": {
+    "conclusion": "不合规",
+    "conclusion_type": 2,
+    "violations": [
+      {
+        "type": 12,
+        "msg": "存在色情不合规",
+        "hits": [
+          [
+            "擦她"
+          ]
+        ]
+      },
+      {
+        "type": 33,
+        "msg": "存在色情不合规",
+        "hits": [
+          [
+            "擦她"
+          ]
+        ]
+      }
+    ],
+    "raw_result": {
+      "conclusion": "不合规",
+      "log_id": 17557028370552096,
+      "phoneRisk": {},
+      "data": [
+        {
+          "msg": "存在色情不合规",
+          "conclusion": "不合规",
+          "hits": [
+            {
+              "wordHitPositions": [
+                {
+                  "subLabel": "0022000300502",
+                  "subLabelDesc": "映射性器官",
+                  "positions": [
+                    [
+                      1423,
+                      1424
+                    ]
+                  ],
+                  "labelDesc": "性器官描述（重度涉黄）",
+                  "label": "200302",
+                  "keyword": "擦她"
+                }
+              ],
+              "probability": 1.0,
+              "datasetName": "百度默认文本反作弊库",
+              "words": [
+                "擦她"
+              ]
+            }
+          ],
+          "subType": 2,
+          "conclusionType": 2,
+          "type": 12
+        },
+        {
+          "msg": "存在色情不合规",
+          "conclusion": "不合规",
+          "hits": [
+            {
+              "wordHitPositions": [
+                {
+                  "subLabel": "0022000300502",
+                  "subLabelDesc": "映射性器官",
+                  "positions": [
+                    [
+                      1423,
+                      1424
+                    ]
+                  ],
+                  "labelDesc": "性器官描述（重度涉黄）",
+                  "label": "200302",
+                  "keyword": "擦她"
+                }
+              ],
+              "probability": 1.0,
+              "datasetName": "百度默认文本反作弊库",
+              "words": [
+                "擦她"
+              ]
+            }
+          ],
+          "subType": 330000,
+          "conclusionType": 2,
+          "type": 33
+        }
+      ],
+      "isHitMd5": false,
+      "conclusionType": 2
+    }
+  },
+  "timestamp": 1755702834.502045
+}

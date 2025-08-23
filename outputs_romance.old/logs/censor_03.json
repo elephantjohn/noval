@@ -1,0 +1,100 @@
+{
+  "chapter": 3,
+  "compliant": false,
+  "details": {
+    "conclusion": "不合规",
+    "conclusion_type": 2,
+    "violations": [
+      {
+        "type": 12,
+        "msg": "存在广告不合规",
+        "hits": [
+          [
+            "手机&电话"
+          ]
+        ]
+      }
+    ],
+    "raw_result": {
+      "conclusion": "不合规",
+      "log_id": 17556194037443561,
+      "phoneRisk": {},
+      "data": [
+        {
+          "msg": "存在广告不合规",
+          "conclusion": "不合规",
+          "hits": [
+            {
+              "wordHitPositions": [
+                {
+                  "subLabel": "0024000200101",
+                  "subLabelDesc": "关注引流",
+                  "positions": [
+                    [
+                      236,
+                      237
+                    ],
+                    [
+                      289,
+                      290
+                    ],
+                    [
+                      591,
+                      592
+                    ],
+                    [
+                      1060,
+                      1061
+                    ],
+                    [
+                      1364,
+                      1365
+                    ],
+                    [
+                      1700,
+                      1701
+                    ],
+                    [
+                      1803,
+                      1804
+                    ],
+                    [
+                      1980,
+                      1981
+                    ],
+                    [
+                      2011,
+                      2012
+                    ],
+                    [
+                      2396,
+                      2397
+                    ],
+                    [
+                      267,
+                      268
+                    ]
+                  ],
+                  "labelDesc": "关注引流",
+                  "label": "400200",
+                  "keyword": "手机&电话"
+                }
+              ],
+              "probability": 1.0,
+              "datasetName": "百度默认文本反作弊库",
+              "words": [
+                "手机&电话"
+              ]
+            }
+          ],
+          "subType": 4,
+          "conclusionType": 2,
+          "type": 12
+        }
+      ],
+      "isHitMd5": false,
+      "conclusionType": 2
+    }
+  },
+  "timestamp": 1755619401.187777
+}

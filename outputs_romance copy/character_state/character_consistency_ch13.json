@@ -1,0 +1,31 @@
+{
+  "chapter": 13,
+  "character_states": {
+    "陆景深": {
+      "emotional_state": "崩溃，不顾一切",
+      "physical_state": "",
+      "location": "陆氏集团",
+      "current_goal": "不惜一切代价挽回苏念",
+      "recent_events": [],
+      "knowledge": [
+        "沈雨薇在说谎"
+      ],
+      "relationships_status": {}
+    },
+    "苏念": {
+      "emotional_state": "动摇，想原谅但害怕",
+      "physical_state": "",
+      "location": "两人的家（准备搬走）",
+      "current_goal": "彻底离开这段关系",
+      "recent_events": [],
+      "knowledge": [
+        "沈雨薇的真面目",
+        "怀孕"
+      ],
+      "relationships_status": {}
+    }
+  },
+  "interaction_history": [],
+  "important_items": {},
+  "locations": {}
+}

@@ -1,0 +1,58 @@
+{
+  "chapter": 15,
+  "compliant": false,
+  "details": {
+    "conclusion": "不合规",
+    "conclusion_type": 2,
+    "violations": [
+      {
+        "type": 12,
+        "msg": "存在广告不合规",
+        "hits": [
+          [
+            "整容"
+          ]
+        ]
+      }
+    ],
+    "raw_result": {
+      "conclusion": "不合规",
+      "log_id": 17556212369312361,
+      "phoneRisk": {},
+      "data": [
+        {
+          "msg": "存在广告不合规",
+          "conclusion": "不合规",
+          "hits": [
+            {
+              "wordHitPositions": [
+                {
+                  "subLabel": "002400800100",
+                  "positions": [
+                    [
+                      897,
+                      898
+                    ]
+                  ],
+                  "label": "4008",
+                  "keyword": "整容"
+                }
+              ],
+              "probability": 1.0,
+              "datasetName": "百度默认文本反作弊库",
+              "words": [
+                "整容"
+              ]
+            }
+          ],
+          "subType": 4,
+          "conclusionType": 2,
+          "type": 12
+        }
+      ],
+      "isHitMd5": false,
+      "conclusionType": 2
+    }
+  },
+  "timestamp": 1755621234.344217
+}

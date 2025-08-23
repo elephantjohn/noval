@@ -1,0 +1,17 @@
+{
+  "chapter": 7,
+  "compliant": true,
+  "details": {
+    "conclusion": "合规",
+    "conclusion_type": 1,
+    "violations": [],
+    "raw_result": {
+      "conclusion": "合规",
+      "log_id": 17556199491385851,
+      "phoneRisk": {},
+      "isHitMd5": false,
+      "conclusionType": 1
+    }
+  },
+  "timestamp": 1755619946.561332
+}

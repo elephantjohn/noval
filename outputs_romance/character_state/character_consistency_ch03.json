@@ -1,0 +1,29 @@
+{
+  "chapter": 3,
+  "character_states": {
+    "陆景深": {
+      "emotional_state": "空虚，开始怀疑自己",
+      "physical_state": "",
+      "location": "陆氏集团",
+      "current_goal": "维持表面的骄傲",
+      "recent_events": [],
+      "knowledge": [],
+      "relationships_status": {}
+    },
+    "苏念": {
+      "emotional_state": "表面坚强，内心痛苦",
+      "physical_state": "",
+      "location": "两人的家（准备搬走）",
+      "current_goal": "彻底离开这段关系",
+      "recent_events": [],
+      "knowledge": [
+        "沈雨薇的真面目",
+        "怀孕"
+      ],
+      "relationships_status": {}
+    }
+  },
+  "interaction_history": [],
+  "important_items": {},
+  "locations": {}
+}

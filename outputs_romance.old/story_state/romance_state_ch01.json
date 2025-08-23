@@ -1,0 +1,124 @@
+{
+  "chapter": 1,
+  "characters": {
+    "男主": {
+      "name": "陆景深",
+      "role": "男主",
+      "age": 32,
+      "occupation": "跨国集团总裁",
+      "personality": [
+        "冷漠",
+        "霸道",
+        "占有欲强",
+        "后期深情"
+      ],
+      "background": "豪门继承人，年少成名，商界传奇",
+      "relationships": {},
+      "emotional_state": "初期：自负傲慢；后期：悔恨追妻",
+      "secrets": [
+        "其实一直深爱女主",
+        "被人设计陷害"
+      ],
+      "growth": ""
+    },
+    "女主": {
+      "name": "苏念",
+      "role": "女主",
+      "age": 28,
+      "occupation": "独立设计师",
+      "personality": [
+        "坚强",
+        "善良",
+        "倔强",
+        "重感情"
+      ],
+      "background": "普通家庭，靠自己打拼，曾为爱付出一切",
+      "relationships": {},
+      "emotional_state": "初期：心死绝望；后期：慢慢心软",
+      "secrets": [
+        "怀有身孕",
+        "患有疾病",
+        "另有身世"
+      ],
+      "growth": ""
+    },
+    "男配": {
+      "name": "顾北辰",
+      "role": "男配",
+      "age": 30,
+      "occupation": "医生/律师",
+      "personality": [
+        "温柔",
+        "体贴",
+        "默默守护"
+      ],
+      "background": "女主的朋友，一直暗恋女主",
+      "relationships": {
+        "苏念": "暗恋守护"
+      },
+      "emotional_state": "愿意等待，但会适时退出",
+      "secrets": [],
+      "growth": ""
+    },
+    "女配": {
+      "name": "沈雨薇",
+      "role": "女配",
+      "age": 29,
+      "occupation": "明星/千金",
+      "personality": [
+        "心机",
+        "表面柔弱",
+        "善于伪装"
+      ],
+      "background": "男主的初恋/青梅竹马",
+      "relationships": {
+        "陆景深": "前女友/白月光"
+      },
+      "emotional_state": "想要夺回男主",
+      "secrets": [],
+      "growth": ""
+    }
+  },
+  "emotion_threads": {
+    "主线": {
+      "name": "男女主情感",
+      "stage": "破裂期",
+      "description": "从深爱到误会，从分离到追回",
+      "key_events": [
+        "相爱结婚",
+        "误会产生",
+        "痛苦分离"
+      ],
+      "tension_level": 8
+    },
+    "男配线": {
+      "name": "男配守护",
+      "stage": "陪伴期",
+      "description": "男配默默守护女主，成为对比",
+      "key_events": [],
+      "tension_level": 4
+    },
+    "反派线": {
+      "name": "白月光搅局",
+      "stage": "挑拨期",
+      "description": "女配不断制造误会和麻烦",
+      "key_events": [],
+      "tension_level": 6
+    }
+  },
+  "chapter_summaries": {
+    "1": [
+      "陆景深以沈雨薇回归为由提离婚，苏念忆起过往温存，心生寒意。",
+      "苏念以支票反讽陆景深，揭露当年苏家窘境，冲突加剧。",
+      "苏念发现验孕棒，陆景深因沈雨薇来电离开，怀孕可能暴露。",
+      "苏念整理行李离开，陆景深追问孩子归属，苏念冷淡拒绝。",
+      "苏念产检确认双胞胎，选择隐瞒，碎纸机卡住验孕单。",
+      "陆景深调查发现苏念怀孕，沈雨薇告知其怀孕消息，内心动摇。",
+      "苏念流产手术大出血，顾北辰揭露其隐瞒真相，陆景深悔恨。",
+      "陆景深雨中等候苏念，苏念拒绝解释，告知离婚协议已签。"
+    ]
+  },
+  "emotion_arc": [
+    "第1章：过渡"
+  ]
+}

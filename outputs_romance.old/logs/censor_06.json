@@ -1,0 +1,68 @@
+{
+  "chapter": 6,
+  "compliant": false,
+  "details": {
+    "conclusion": "不合规",
+    "conclusion_type": 2,
+    "violations": [
+      {
+        "type": 12,
+        "msg": "存在广告不合规",
+        "hits": [
+          [
+            "号码&手机"
+          ]
+        ]
+      }
+    ],
+    "raw_result": {
+      "conclusion": "不合规",
+      "log_id": 17556198203033431,
+      "phoneRisk": {},
+      "data": [
+        {
+          "msg": "存在广告不合规",
+          "conclusion": "不合规",
+          "hits": [
+            {
+              "wordHitPositions": [
+                {
+                  "subLabel": "0024000200101",
+                  "subLabelDesc": "关注引流",
+                  "positions": [
+                    [
+                      607,
+                      608
+                    ],
+                    [
+                      598,
+                      599
+                    ],
+                    [
+                      1335,
+                      1336
+                    ]
+                  ],
+                  "labelDesc": "关注引流",
+                  "label": "400200",
+                  "keyword": "号码&手机"
+                }
+              ],
+              "probability": 1.0,
+              "datasetName": "百度默认文本反作弊库",
+              "words": [
+                "号码&手机"
+              ]
+            }
+          ],
+          "subType": 4,
+          "conclusionType": 2,
+          "type": 12
+        }
+      ],
+      "isHitMd5": false,
+      "conclusionType": 2
+    }
+  },
+  "timestamp": 1755619817.714269
+}

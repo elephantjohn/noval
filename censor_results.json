@@ -1,24 +1,14 @@
 {
-  "tmp/chapter_03_龙王庙夺碑.md": {
+  "/Users/tallfly/qidian/outputs_romance/chapters/第15章_审核失败.md": {
     "status": "compliant",
     "detail": "内容合规 - 合规",
     "raw_result": {
       "conclusion": "合规",
-      "log_id": 17555284099229259,
+      "log_id": 17556962969743572,
       "phoneRisk": {},
       "isHitMd5": false,
       "conclusionType": 1
-    }
-  },
-  "tmp/chapter_06_身世真相.md": {
-    "status": "compliant",
-    "detail": "内容合规 - 合规",
-    "raw_result": {
-      "conclusion": "合规",
-      "log_id": 17555284121092775,
-      "phoneRisk": {},
-      "isHitMd5": false,
-      "conclusionType": 1
-    }
+    },
+    "fixed_file": "/Users/tallfly/qidian/outputs_romance/chapters/第15章_审核失败_修复.md"
   }
 }
