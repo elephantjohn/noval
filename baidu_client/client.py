@@ -53,7 +53,7 @@ class BaiduErnieClient:
 
     API_URL = "https://qianfan.baidubce.com/v2/chat/completions"
 
-    def __init__(self, request_timeout_seconds: int = 120) -> None:
+    def __init__(self, request_timeout_seconds: int = 360) -> None:
         self.request_timeout_seconds = request_timeout_seconds
 
     @staticmethod
