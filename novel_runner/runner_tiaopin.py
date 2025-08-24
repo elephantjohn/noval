@@ -302,6 +302,11 @@ def call_llm(
     return resp.content or ""
 
 
+def count_chinese_chars(text: str) -> int:
+    """统计中文汉字字符数量（不含标点和英文字母/数字）。"""
+    return len(re.findall(r"[\u4e00-\u9fff]", text))
+
+
 def run(args: argparse.Namespace) -> None:
     logger.info("=== 调频-失谐 长篇生成器启动 ===")
     ensure_dirs()
@@ -416,6 +421,28 @@ def run(args: argparse.Namespace) -> None:
                     model_name="ernie-x1-turbo-32k",
                     logs_key=logs_key,
                 )
+                # 若字数不足，进行一次补写调用（只补充缺口部分，强化要求）
+                chinese_len = count_chinese_chars(content)
+                if chinese_len < 4000:
+                    logger.warning(f"第 {chapter_number} 章初次生成仅 {chinese_len} 个汉字，低于4000，进行补写...")
+                    deficit = 4000 - chinese_len
+                    supplement_prompt = (
+                        user_prompt
+                        + "\n\n[补写要求]\n"
+                        + f"- 当前正文仅有{chinese_len}个汉字，不足4000。请继续写作补足至少{deficit}个汉字（可更多，但总字数不超过5000）。\n"
+                        + "- 继续上一段内容的叙事，不要重复已写内容，不要重开新结构。\n"
+                        + "- 以场景描写、心理描写、环境与感官细节为主，保持口语化短句风格。\n"
+                    )
+                    more = call_llm(
+                        client=client,
+                        system_prompt=system_prompt,
+                        user_prompt=supplement_prompt,
+                        model_name="ernie-x1-turbo-32k",
+                        logs_key=f"{logs_key}_supplement",
+                    )
+                    content = (content or "") + "\n\n" + (more or "")
+                    final_len = count_chinese_chars(content)
+                    logger.info(f"第 {chapter_number} 章补写完成，当前约 {final_len} 个汉字。")
                 # 写章节
                 filename = sanitize_filename(title, chapter_number)
                 path = write_text_with_conflict(CHAPTERS_DIR, filename, content)
